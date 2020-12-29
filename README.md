@@ -103,7 +103,7 @@ _**Jawab**_
 Pada SURABAYA, buat file `1.sh` yang berisi syntax:
 
 ```
-iptables -t nat -A POSTROUTING -s 192.168.0.0/16 -o eth0 -j SNAT --to-source 10.151.72.34
+iptables -t nat -A POSTROUTING -s xxx -o eth0 -j SNAT --to-source xxx
 ```
 
 ### Nomor 2
@@ -115,7 +115,7 @@ _**Jawab**_
 Pada SURABAYA, buat file `2.sh` yang berisi syntax:
 
 ```
-iptables -A FORWARD -d 10.151.73.64/29 -i eth0 -p tcp --dport 22 -j DROP
+iptables -A FORWARD -d xxx -i eth0 -p tcp --dport 22 -j DROP
 ```
 
 ### Nomor 3
@@ -139,8 +139,8 @@ _**Jawab**_
 Pada MALANG, buat file `4.sh` yang berisi syntax:
 
 ```
-iptables -A INPUT -s 192.168.2.0/24 -d 10.151.73.66/29 -m time --timestart 07:00 --timestop 17:00 --weekdays Mon,Tue,Wed,Thu,Fri -j ACCEPT
-iptables -A INPUT -s 192.168.2.0/24 -j REJECT
+iptables -A INPUT -s xxx -d 10.151.73.66/29 -m time --timestart 07:00 --timestop 17:00 --weekdays Mon,Tue,Wed,Thu,Fri -j ACCEPT
+iptables -A INPUT -s xxx -j REJECT
 ```
 
 ### Nomor 5
@@ -152,7 +152,7 @@ _**Jawab**_
 Pada MALANG, buat file `5.sh` yang berisi syntax:
 
 ```
-iptables -A INPUT -s 192.168.1.0/24 -m time --timestart 07:00 --timestop 17:00 -j REJECT
+iptables -A INPUT -s xxx -m time --timestart 07:00 --timestop 17:00 -j REJECT
 ```
 
 ### Nomor 6
@@ -164,8 +164,8 @@ _**Jawab**_
 Pada SURABAYA, buat file `6.sh` yang berisi syntax:
 
 ```
-iptables -A PREROUTING -t nat -p tcp -d 10.151.73.66 -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination 192.168.1.2:80
-iptables -A PREROUTING -t nat -p tcp -d 10.151.73.66 -j DNAT --to-destination 192.168.1.3:80
+iptables -A PREROUTING -t nat -p tcp -d xxx -m statistic --mode nth --every 2 --packet 0 -j DNAT --to-destination xxx
+iptables -A PREROUTING -t nat -p tcp -d xxx -j DNAT --to-destination xxx
 ```
 
 ### Nomor 7
