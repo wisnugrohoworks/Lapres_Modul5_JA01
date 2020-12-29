@@ -177,5 +177,7 @@ _**Jawab**_
 Setiap UML yang memmiliki aturan DROP antara lain SURABAYA, MALANG, dan MOJOKERTO. Pada ketiga UML tersebut, buat file `7.sh` yang berisi syntax:
 
 ```
-iptables -A -j Log --log-prefix "Dropped Connection: " --log-level 6
+iptables -N LOGGING
+iptables -A LOGGING -j LOG --log-prefix "Dropped Packets: " --log-level 4
+iptables -A LOGGING -j DROP
 ```
